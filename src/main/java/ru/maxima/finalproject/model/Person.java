@@ -10,10 +10,12 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
+
 public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
     private String name;
     private Integer age;
@@ -25,7 +27,7 @@ public class Person {
     private LocalDateTime removedAt;
     private String createdPerson;
     private String removedPerson;
-    @OneToMany(mappedBy = "person_id")
+    @OneToMany(mappedBy = "owner")
     private List<Book> takenBooks;
 
 }

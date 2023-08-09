@@ -24,7 +24,7 @@ public class Book {
     private String updatedPerson;
     private String removedPerson;
     @ManyToOne
-    @JoinColumn(name="person_id", referencedColumnName = "id")
-    private Long person_id;
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    private Person owner;
 
 }
