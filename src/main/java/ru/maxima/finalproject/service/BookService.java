@@ -12,7 +12,8 @@ import java.util.List;
 public class BookService {
 
     private final BookRepo bookRepo;
-    public List<Book> allBooks () {
+
+    public List<Book> allBooks() {
         return bookRepo.findAll();
     }
 
