@@ -1,8 +1,10 @@
 package ru.maxima.finalproject.interfaces;
 
+import ru.maxima.finalproject.model.Person;
+
 public interface AuthService {
 
-    void registration();
+    void registration(Person person, String adminId);
 
     String authentication();
 }

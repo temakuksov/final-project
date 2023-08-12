@@ -7,14 +7,26 @@ import ru.maxima.finalproject.interfaces.AuthService;
 import ru.maxima.finalproject.model.Person;
 import ru.maxima.finalproject.repository.PersonRepo;
 
+import java.time.LocalDateTime;
+
 @Service
 @Transactional
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
 
-    private PersonRepo personRepo;
+    private final PersonRepo personRepo;
     @Override
-    public void registration() {
+    public void registration(Person user, String adminId) {
+        Person personForSave = Person.builder()
+                .name(user.getName())
+                .password(user.getPassword())
+                .email(user.getEmail())
+                .role("User")
+                .createdAt(LocalDateTime.now())
+                .createdPerson(adminId)
+                .build();
+
+        personRepo.save(personForSave);
 
     }
 
