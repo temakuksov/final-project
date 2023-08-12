@@ -16,16 +16,15 @@ public class AuthServiceImpl implements AuthService {
 
     private final PersonRepo personRepo;
     @Override
-    public void registration(Person user, String adminId) {
+    public void registration(Person user, Long adminId) {
         Person personForSave = Person.builder()
                 .name(user.getName())
                 .password(user.getPassword())
                 .email(user.getEmail())
                 .role("User")
                 .createdAt(LocalDateTime.now())
-                .createdPerson(adminId)
+                .createdPerson(personRepo.findNameById(adminId))
                 .build();
-
         personRepo.save(personForSave);
 
     }

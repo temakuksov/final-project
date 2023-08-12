@@ -1,0 +1,10 @@
+POST localhost:8080/admin/reg/1
+Content-Type: application/json
+
+{
+"name": "testuser",
+"password": "userpassw",
+"age": 40,
+"email": "testues@mail.ru",
+"role": "user"
+}
