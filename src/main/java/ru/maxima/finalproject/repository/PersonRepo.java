@@ -7,8 +7,7 @@ import ru.maxima.finalproject.model.Person;
 
 public interface PersonRepo extends JpaRepository <Person,Long> {
 
-    @Query("select p.name from #{#entityName} p where p.id=?1")
-    @Modifying
-    String findNameById(Long adminId);
+    @Query
+    Person getPersonById(Long adminId);
 
 }

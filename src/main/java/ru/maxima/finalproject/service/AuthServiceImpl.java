@@ -23,7 +23,7 @@ public class AuthServiceImpl implements AuthService {
                 .email(user.getEmail())
                 .role("User")
                 .createdAt(LocalDateTime.now())
-                .createdPerson(personRepo.findNameById(adminId))
+                .createdPerson(personRepo.getPersonById(adminId).getName())
                 .build();
         personRepo.save(personForSave);
 
