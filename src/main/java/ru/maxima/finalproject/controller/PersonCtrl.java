@@ -1,6 +1,7 @@
 package ru.maxima.finalproject.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.maxima.finalproject.model.Person;
 import ru.maxima.finalproject.service.PersonService;
@@ -13,6 +14,7 @@ public class PersonCtrl {
 
     private final PersonService personService;
 
+    @GetMapping("/persons")
     public List<Person> getAllPersons () {
         return personService.allPerson();
     }
