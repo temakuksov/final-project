@@ -6,6 +6,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.maxima.finalproject.config.Authorities;
 import ru.maxima.finalproject.interfaces.AuthService;
 import ru.maxima.finalproject.model.Person;
 import ru.maxima.finalproject.repository.PersonRepo;
@@ -29,7 +30,7 @@ public class AuthServiceImpl implements AuthService {
                 .name(user.getName())
                 .password(passwordEncoder.encode(user.getPassword()))
                 .email(user.getEmail())
-                .role("User")
+                .role(Authorities.ROLE_USER)
                 .createdAt(LocalDateTime.now())
                 .createdPerson(personRepo.findBy(adminId))
                 .build();

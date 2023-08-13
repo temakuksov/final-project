@@ -1,10 +1,11 @@
 POST localhost:8080/auth/reg/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4ifQ.ha4bocaQHcMKinHVX4KcGMXsuQq_LfWZeBmWMmOXEs0
 Content-Type: application/json
 
 {
-"name": "testuser2",
-"password": "userpassw",
-"email": "testuser2@mail.ru"
+"name": "testuser4",
+"password": "P@ssw0rd",
+"email": "testuser4@mail.ru"
 }
 
 ###
@@ -15,5 +16,5 @@ Content-Type: application/json
 {
   "name": "testuser3",
   "password": "password",
-  "email": "testuser2@mail.ru"
+  "email": "testuser3@mail.ru"
 }

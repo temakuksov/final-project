@@ -13,9 +13,10 @@ public class AuthCtrl {
 
     private final AuthService authService;
 
-    @PostMapping("/reg/{adminId}")
+
     @PreAuthorize("hasAnyAuthority(@authorities.ROLE_ADMIN)")
-    public void registration (@RequestBody Person user, @PathVariable Long adminId) {
+    @PostMapping("/reg/{adminId}")
+        public void registration (@RequestBody Person user, @PathVariable Long adminId) {
         authService.registration(user, adminId);
     }
 
