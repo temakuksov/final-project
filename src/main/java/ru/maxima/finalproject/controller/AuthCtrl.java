@@ -1,27 +1,27 @@
 package ru.maxima.finalproject.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import ru.maxima.finalproject.interfaces.AuthService;
 import ru.maxima.finalproject.model.Person;
 
-import java.time.LocalDateTime;
-import java.time.Period;
-
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/admin")
+@RequestMapping("/auth")
 public class AuthCtrl {
 
     private final AuthService authService;
 
     @PostMapping("/reg/{adminId}")
+    @PreAuthorize("hasAnyAuthority(@authorities)")
     public void registration (@RequestBody Person user, @PathVariable Long adminId) {
         authService.registration(user, adminId);
     }
 
-    public String authentication () {
-        return null;
+    @GetMapping("/login")
+    public String authentication (@RequestBody Person person) {
+        return authService.authentication(person);
     }
 
 

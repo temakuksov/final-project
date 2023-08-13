@@ -19,4 +19,10 @@ public class BookService {
         return bookRepo.findAll();
     }
 
+    public Long newBook(Book book){
+
+        return null;
+    }
+
+
 }

@@ -5,4 +5,5 @@ import ru.maxima.finalproject.model.Book;
 
 public interface BookRepo extends JpaRepository<Book,Long> {
 
+
 }

@@ -6,6 +6,6 @@ public interface AuthService {
 
     void registration(Person person, Long adminId);
 
-    String authentication();
+    String authentication(Person person);
 
 }

@@ -1,8 +1,19 @@
-POST localhost:8080/admin/reg/1
+POST localhost:8080/auth/reg/1
 Content-Type: application/json
 
 {
-"name": "testuser",
+"name": "testuser2",
 "password": "userpassw",
-"email": "testues@mail.ru"
+"email": "testuser2@mail.ru"
+}
+
+###
+
+POST localhost:8080/auth/reg/1
+Content-Type: application/json
+
+{
+  "name": "testuser3",
+  "password": "password",
+  "email": "testuser2@mail.ru"
 }
