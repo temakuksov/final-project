@@ -11,12 +11,12 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/person")
+@RequestMapping("/persons")
 public class PersonCtrl {
 
     private final PersonService personService;
 
-    @GetMapping("/getAllPersons")
+    @GetMapping("/getall")
     public List<Person> getAllPersons () {
         return personService.allPerson();
     }
