@@ -35,7 +35,7 @@ public class BookService {
         bookRepo.save(bookForSave);
     }
 
-    // показать все книги +
+    // показать все (активные) книги +
 
     // добавить книгу (админ) +
 
