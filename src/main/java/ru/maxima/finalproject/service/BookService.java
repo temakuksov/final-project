@@ -18,6 +18,7 @@ public class BookService {
     private final BookRepo bookRepo;
     private final PersonRepo personRepo;
 
+    // не отображать удаленные книги
     public List<Book> allBooks() {
         return bookRepo.findAll();
     }
