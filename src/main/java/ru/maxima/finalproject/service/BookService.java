@@ -20,7 +20,7 @@ public class BookService {
 
     // не отображать удаленные книги
     public List<Book> allBooks() {
-        return bookRepo.findAll();
+        return bookRepo.findAllNotRemoved();
     }
 
     public void newBook(Book book, Long adminId){
