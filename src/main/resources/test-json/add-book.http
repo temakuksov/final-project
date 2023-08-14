@@ -8,3 +8,15 @@ Content-Type: application/json
   "yearOfProduction": 2020,
   "annotation": "читать по любому"
 }
+
+###
+POST localhost:8080/books/addbook/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4ifQ.ha4bocaQHcMKinHVX4KcGMXsuQq_LfWZeBmWMmOXEs0
+Content-Type: application/json
+
+{
+  "name": "Любить. Считать. Как построить крепкие и здоровые отношения на основе финансовой независимости",
+  "author": "Шишкина Светлана",
+  "yearOfProduction": 2020,
+  "annotation": "Автор книги, уверена, что именно собственная финансовая независимость помогает женщинам построить действительно прочные отношения. Вы узнаете, какие знания о финансах будут полезными на разных этапах жизни"
+}
