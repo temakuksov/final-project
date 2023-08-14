@@ -3,9 +3,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQ
 Content-Type: application/json
 
 {
-"name": "testuser5",
+"name": "testuser8",
 "password": "P@ssw0rd",
-"email": "testuser5@mail.ru"
+"email": "testuser8@mail.ru"
 }
 
 ###

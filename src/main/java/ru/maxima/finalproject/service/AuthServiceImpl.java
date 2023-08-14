@@ -35,9 +35,9 @@ public class AuthServiceImpl implements AuthService {
                 .createdPerson(personRepo.findBy(adminId))
                 .build();
         personRepo.save(personForSave);
-
     }
 
+    // !!!добавить проверку на незаблокированного пользователя
     @Override
     public String authentication(Person person) {
         try {

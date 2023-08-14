@@ -5,7 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.maxima.finalproject.model.Book;
 import ru.maxima.finalproject.repository.BookRepo;
+import ru.maxima.finalproject.repository.PersonRepo;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -14,15 +16,34 @@ import java.util.List;
 public class BookService {
 
     private final BookRepo bookRepo;
+    private final PersonRepo personRepo;
 
     public List<Book> allBooks() {
         return bookRepo.findAll();
     }
 
-    public Long newBook(Book book){
-
-        return null;
+    public void newBook(Book book, Long adminId){
+        Book bookForSave = Book.builder()
+                .name(book.getName())
+                .author(book.getAuthor())
+                .yearOfProduction(book.getYearOfProduction())
+                .annotation(book.getAnnotation())
+                .createdPerson(personRepo.findBy(adminId))
+                .createdAt(LocalDateTime.now())
+                .build();
+        bookRepo.save(bookForSave);
     }
 
+    // показать все книги +
+
+    // добавить книгу (админ) +
+
+    // удалить книгу (админ)
+
+    // редактировать книгу (админ)
+
+    // взять книгу
+
+    // вернуть книгу
 
 }
