@@ -11,6 +11,7 @@ import ru.maxima.finalproject.model.Person;
 import ru.maxima.finalproject.repository.PersonRepo;
 import ru.maxima.finalproject.service.AuthService;
 import ru.maxima.finalproject.service.JwtService;
+import ru.maxima.finalproject.service.PersonService;
 
 import java.time.LocalDateTime;
 
@@ -23,6 +24,7 @@ public class AuthServiceImpl implements AuthService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
     private final PasswordEncoder passwordEncoder;
+    private final PersonService personService;
 
 
     @Override
@@ -33,7 +35,7 @@ public class AuthServiceImpl implements AuthService {
                 .email(user.getEmail())
                 .role(Authorities.ROLE_USER)
                 .createdAt(LocalDateTime.now())
-                .createdPerson(personRepo.findBy(adminId))
+                .createdPerson(personService.getPersonName(adminId))
                 .build();
         personRepo.save(personForSave);
     }

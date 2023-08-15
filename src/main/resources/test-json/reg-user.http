@@ -3,9 +3,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQ
 Content-Type: application/json
 
 {
-"name": "testuser7",
-"password": "P@ssw0rd",
-"email": "testuser7@mail.ru"
+  "name": "testuser8",
+  "password": "P@ssw0rd",
+  "email": "testuser8@mail.ru"
 }
 
 ###
@@ -15,7 +15,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQ
 Content-Type: application/json
 
 {
-  "name": "testuser3",
-  "password": "password",
-  "email": "testuser3@mail.ru"
+"name": "testuser3",
+"password": "password",
+"email": "testuser3@mail.ru"
 }

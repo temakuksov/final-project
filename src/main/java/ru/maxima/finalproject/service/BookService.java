@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.maxima.finalproject.model.Book;
 import ru.maxima.finalproject.repository.BookRepo;
-import ru.maxima.finalproject.repository.PersonRepo;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -16,11 +15,11 @@ import java.util.List;
 public class BookService {
 
     private final BookRepo bookRepo;
-    private final PersonRepo personRepo;
+    private final PersonService personService;
 
     // не отображать удаленные книги
     public List<Book> allBooks() {
-        return bookRepo.findAllNotRemoved();
+        return bookRepo.findByRemovedAtIsNull();
     }
 
     public void newBook(Book book, Long adminId){
@@ -29,7 +28,7 @@ public class BookService {
                 .author(book.getAuthor())
                 .yearOfProduction(book.getYearOfProduction())
                 .annotation(book.getAnnotation())
-                .createdPerson(personRepo.findBy(adminId))
+                .createdPerson(personService.getPersonName(adminId))
                 .createdAt(LocalDateTime.now())
                 .build();
         bookRepo.save(bookForSave);

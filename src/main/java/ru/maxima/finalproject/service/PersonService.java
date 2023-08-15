@@ -15,9 +15,16 @@ public class PersonService {
 
     private final PersonRepo personRepo;
 
+    public String getPersonName(Long id) {
+        return personRepo.findPersonById(id).get().getName();
+    }
+
     public List<Person> allPerson() {
         return personRepo.findAll();
     }
+
+
+
 
     // показать всех персон ?
 

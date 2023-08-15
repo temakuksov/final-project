@@ -3,9 +3,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQ
 Content-Type: application/json
 
 {
-  "name": "Хорошая книга 2",
-  "author": "Я",
-  "yearOfProduction": 2020,
+  "name": "Хорошая книга 3",
+  "author": "Я и он",
+  "yearOfProduction": 2021,
   "annotation": "читать по любому"
 }
 
