@@ -1,4 +1,4 @@
-package ru.maxima.finalproject.service;
+package ru.maxima.finalproject.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -7,9 +7,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.maxima.finalproject.config.Authorities;
-import ru.maxima.finalproject.interfaces.AuthService;
 import ru.maxima.finalproject.model.Person;
 import ru.maxima.finalproject.repository.PersonRepo;
+import ru.maxima.finalproject.service.AuthService;
+import ru.maxima.finalproject.service.JwtService;
 
 import java.time.LocalDateTime;
 

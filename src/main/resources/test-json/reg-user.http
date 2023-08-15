@@ -1,11 +1,11 @@
-POST localhost:8080/auth/reg/1
+POST localhost:8080/persons/reg/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4ifQ.ha4bocaQHcMKinHVX4KcGMXsuQq_LfWZeBmWMmOXEs0
 Content-Type: application/json
 
 {
-"name": "testuser8",
+"name": "testuser7",
 "password": "P@ssw0rd",
-"email": "testuser8@mail.ru"
+"email": "testuser7@mail.ru"
 }
 
 ###

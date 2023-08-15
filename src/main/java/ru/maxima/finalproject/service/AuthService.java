@@ -1,4 +1,4 @@
-package ru.maxima.finalproject.interfaces;
+package ru.maxima.finalproject.service;
 
 import ru.maxima.finalproject.model.Person;
 
