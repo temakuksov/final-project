@@ -2,7 +2,6 @@ package ru.maxima.finalproject.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import ru.maxima.finalproject.model.Person;
-
 import java.util.Optional;
 
 public interface PersonRepo extends JpaRepository<Person, Long> {
@@ -13,6 +12,8 @@ public interface PersonRepo extends JpaRepository<Person, Long> {
     Optional<Person> findPersonById(Long adminId);
 
     Optional<Person> findByEmail(String email);
+
+    boolean existsByEmail(String email);
 
 
 }

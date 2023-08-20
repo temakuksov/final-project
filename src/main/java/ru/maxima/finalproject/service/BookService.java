@@ -1,49 +1,29 @@
 package ru.maxima.finalproject.service;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.http.ResponseEntity;
 import ru.maxima.finalproject.model.Book;
-import ru.maxima.finalproject.repository.BookRepo;
 
-import java.time.LocalDateTime;
+
 import java.util.List;
 
-@Service
-@Transactional
-@RequiredArgsConstructor
-public class BookService {
-
-    private final BookRepo bookRepo;
-    private final PersonService personService;
-
-    // не отображать удаленные книги
-    public List<Book> allBooks() {
-        return bookRepo.findByRemovedAtIsNull();
-    }
-
-    public void newBook(Book book, Long adminId){
-        Book bookForSave = Book.builder()
-                .name(book.getName())
-                .author(book.getAuthor())
-                .yearOfProduction(book.getYearOfProduction())
-                .annotation(book.getAnnotation())
-                .createdPerson(personService.getPersonName(adminId))
-                .createdAt(LocalDateTime.now())
-                .build();
-        bookRepo.save(bookForSave);
-    }
+public interface BookService {
 
     // показать все (активные) книги +
+    List<Book> getAllBooks();
 
     // добавить книгу (админ) +
+    boolean createBook (Book book);
 
-    // удалить книгу (админ)
+    // отметить книгу как удаленную книгу (админ) +
+    void removeBookById(Long bookId);
 
     // редактировать книгу (админ)
+    boolean editBook(Book book);
 
-    // взять книгу
+    // взять книгу (любой авторизовавшийся)
+    ResponseEntity<Book> takeBook (Book book);
 
-    // вернуть книгу
+    // вернуть книгу (любой авторизовавшийся)
+    ResponseEntity<Book> returnBook (Book book);
 
 }

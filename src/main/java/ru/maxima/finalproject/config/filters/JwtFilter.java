@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import ru.maxima.finalproject.config.detail.PersonDetails;
 import ru.maxima.finalproject.model.Person;
-import ru.maxima.finalproject.service.JwtService;
+import ru.maxima.finalproject.service.impl.JwtServiceImpl;
 
 import java.io.IOException;
 
@@ -26,23 +26,24 @@ public class JwtFilter extends OncePerRequestFilter {
         if (authHeader != null && authHeader.contains("Bearer ")) {
             String token = authHeader.substring(7);
             if (!token.isBlank()) {
-                DecodedJWT decodedJWT = JWT.require(Algorithm.HMAC256(JwtService.SECRET))
+                DecodedJWT decodedJWT = JWT.require(Algorithm.HMAC256(JwtServiceImpl.SECRET))
                         .build()
                         .verify(token);
 
                 Person person = Person.builder()
                         .email(decodedJWT.getClaim("Email").asString())
                         .role(decodedJWT.getClaim("Role").asString())
+                        .name(decodedJWT.getClaim("Name").asString())
+
                         .build();
 
                 PersonDetails personDetails = new PersonDetails(person);
                 UsernamePasswordAuthenticationToken authenticationToken =
-                        new UsernamePasswordAuthenticationToken(token, null, personDetails.getAuthorities());
+                        new UsernamePasswordAuthenticationToken(person, null, personDetails.getAuthorities());
 
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }
         }
         filterChain.doFilter(request, response);
     }
-
 }
