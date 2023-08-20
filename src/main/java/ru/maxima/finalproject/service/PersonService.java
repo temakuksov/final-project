@@ -1,29 +1,28 @@
 package ru.maxima.finalproject.service;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import ru.maxima.finalproject.model.Person;
-import ru.maxima.finalproject.repository.PersonRepo;
-
 import java.util.List;
+import java.util.Optional;
 
-@Service
-@Transactional
-@RequiredArgsConstructor
-public class PersonService {
+public interface PersonService {
 
-    private final PersonRepo personRepo;
+    // добавить персону в базу (регистрация)
+    boolean createPerson(Person person);
 
-    public String getPersonName(Long id) {
-        return personRepo.findPersonById(id).get().getName();
-    }
+    // получить список всех персон
+    List<Person> getAllPersons();
 
-    public List<Person> allPerson() {
-        return personRepo.findAll();
-    }
+    // редактировать персону
+    boolean editPerson (Person person);
 
+    // заблокировать пользователя (removedAt)
+    boolean blockPerson (Person person);
 
+    // получить имя персоны из базы
+    String getPersonNameFromDB(Long id);
+
+    // получить персону по id
+    Optional<Person> getOnePerson(Long personId);
 
 
     // показать всех персон ?

@@ -30,6 +30,7 @@ public class SpringConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(a -> {
+                    a.requestMatchers("/auth/get-token").permitAll();
                     a.requestMatchers("/auth/login").permitAll();
                     a.anyRequest().authenticated();
                 })
