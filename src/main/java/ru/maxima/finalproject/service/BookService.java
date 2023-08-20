@@ -21,7 +21,7 @@ public interface BookService {
     boolean editBook(Book book);
 
     // взять книгу (любой авторизовавшийся)
-    ResponseEntity<Book> takeBook (Book book);
+    boolean takeBook (Long bookId);
 
     // вернуть книгу (любой авторизовавшийся)
     ResponseEntity<Book> returnBook (Book book);

@@ -58,4 +58,16 @@ public class BookCtrl {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Book not found!");
         }
     }
+
+    @PostMapping("/take/{bookId}")
+    public ResponseEntity<String> takeBook(@PathVariable Long bookId) {
+        boolean isTakeBook = bookService.takeBook(bookId);
+        if (isTakeBook) {
+            return ResponseEntity.status(HttpStatus.OK).body("Book is taken successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Book not found!");
+        }
+
+    }
+
 }

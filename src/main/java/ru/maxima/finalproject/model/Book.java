@@ -27,7 +27,7 @@ public class Book {
     private String createdPerson;
     private String updatedPerson;
     private String removedPerson;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private Person owner;
 

@@ -77,8 +77,15 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public ResponseEntity<Book> takeBook(Book book) {
-        return null;
+    // @Cascade()
+    public boolean takeBook(Long bookId) {
+        if (bookRepo.existsById(bookId)) {
+            Book bookForTake = bookRepo.findBookById(bookId);
+            bookForTake.setOwner(jwtService.getUserNameFromToken());
+            bookRepo.save(bookForTake);
+            return true;
+        }
+        return false;
     }
 
     @Override
