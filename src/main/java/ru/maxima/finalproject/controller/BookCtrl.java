@@ -76,7 +76,7 @@ public class BookCtrl {
         if (isReturnedBook) {
             return ResponseEntity.status(HttpStatus.OK).body("Book is returned successfully");
         } else
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("You cant return this book!");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("You can't return this book!");
     }
 
 

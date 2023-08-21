@@ -8,7 +8,6 @@ import ru.maxima.finalproject.config.Authorities;
 import ru.maxima.finalproject.exeptions.UserNotFoundExeption;
 import ru.maxima.finalproject.model.Person;
 import ru.maxima.finalproject.repository.PersonRepo;
-import ru.maxima.finalproject.service.JwtService;
 import ru.maxima.finalproject.service.PersonService;
 
 import java.time.LocalDateTime;
@@ -20,7 +19,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class PersonServiceImpl implements PersonService {
 
-    private final JwtService jwtService;
+    private final JwtServiceImpl jwtService;
     private final PersonRepo personRepo;
     private final PasswordEncoder passwordEncoder;
 
