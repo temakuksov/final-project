@@ -1,3 +1,5 @@
+### админ редактирует книгу
+
 POST localhost:8080/books/edit
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4ifQ.uVY6lFP4hNVxncSDhsJZdbHyLxhhg2RQDh6HtT3va4s
 Content-Type: application/json
@@ -7,7 +9,7 @@ Content-Type: application/json
   "name": "Хорошая книга 3",
   "author": "Я, он и она",
   "yearOfProduction": 2023,
-  "annotation": "прочитать всем!!!"
+  "annotation": "прочитать всем!!!!!!!"
 }
 
 

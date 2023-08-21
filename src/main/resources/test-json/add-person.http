@@ -1,11 +1,13 @@
+### админ создает пользователя
+
 POST localhost:8080/persons/add
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4ifQ.ha4bocaQHcMKinHVX4KcGMXsuQq_LfWZeBmWMmOXEs0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4ifQ.uVY6lFP4hNVxncSDhsJZdbHyLxhhg2RQDh6HtT3va4s
 Content-Type: application/json
 
 {
-  "name": "testuser9",
+  "name": "testuser10",
   "password": "P@ssw0rd",
-  "email": "testuser8@mail.ru"
+  "email": "testuser10@mail.ru"
 }
 
 ###

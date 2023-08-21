@@ -1,0 +1,25 @@
+### Админ добавляет книгу (дубль)
+
+POST localhost:8080/books/add
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4ifQ.uVY6lFP4hNVxncSDhsJZdbHyLxhhg2RQDh6HtT3va4s
+Content-Type: application/json
+
+{
+  "name": "Хорошая книга 4",
+  "author": "Я и он",
+  "yearOfProduction": 2021,
+  "annotation": "читать по любому"
+}
+
+
+###  Админ добавляет книгу
+POST localhost:8080/books/add
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4ifQ.ha4bocaQHcMKinHVX4KcGMXsuQq_LfWZeBmWMmOXEs0
+Content-Type: application/json
+
+{
+  "name": "Новый ребенок к пятнице. Воспитание без криков и наказаний за 5 дней",
+  "author": "Леман Кевин",
+  "yearOfProduction": 2021,
+  "annotation": "Лучшие методики по воспитанию - в одной книге!"
+}

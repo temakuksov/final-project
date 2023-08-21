@@ -1,6 +1,5 @@
 package ru.maxima.finalproject.service;
 
-import org.springframework.http.ResponseEntity;
 import ru.maxima.finalproject.model.Book;
 
 
@@ -24,6 +23,6 @@ public interface BookService {
     boolean takeBook (Long bookId);
 
     // вернуть книгу (любой авторизовавшийся)
-    ResponseEntity<Book> returnBook (Book book);
+    boolean returnBook (Long bookId);
 
 }

@@ -61,13 +61,23 @@ public class BookCtrl {
 
     @PostMapping("/take/{bookId}")
     public ResponseEntity<String> takeBook(@PathVariable Long bookId) {
-        boolean isTakeBook = bookService.takeBook(bookId);
-        if (isTakeBook) {
-            return ResponseEntity.status(HttpStatus.OK).body("Book is taken successfully!");
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Book not found!");
-        }
 
+        boolean isTakenBook = bookService.takeBook(bookId);
+        if (isTakenBook) {
+            return ResponseEntity.status(HttpStatus.OK).body("Book is taken successfully");
+        } else
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Book not found / book was taken!");
     }
+
+    @PostMapping("/return/{bookId}")
+    public ResponseEntity<String> returnBook(@PathVariable Long bookId) {
+
+        boolean isReturnedBook = bookService.returnBook(bookId);
+        if (isReturnedBook) {
+            return ResponseEntity.status(HttpStatus.OK).body("Book is returned successfully");
+        } else
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("You cant return this book!");
+    }
+
 
 }

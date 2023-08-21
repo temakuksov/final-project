@@ -32,7 +32,7 @@ public class AuthCtrl {
             UserDetails personDetails = personDetailsService.loadUserByUsername(person.getEmail());
             if (!personDetails.isEnabled()) return ResponseEntity.status(HttpStatus.LOCKED).body("Person is blocked!");
             if (passwordEncoder.matches(person.getPassword(), personDetails.getPassword())) {
-                return ResponseEntity.status(HttpStatus.OK).body("Person logged successfully \n Token: " +  authService.authentication(person));
+                return ResponseEntity.status(HttpStatus.OK).body("Person logged successfully \nToken:\n" +  authService.authentication(person));
             }
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Person failed to login");
         } catch (UserNotFoundExeption ue) {

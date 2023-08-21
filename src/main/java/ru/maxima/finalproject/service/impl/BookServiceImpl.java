@@ -1,7 +1,6 @@
 package ru.maxima.finalproject.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.maxima.finalproject.model.Book;
@@ -81,15 +80,31 @@ public class BookServiceImpl implements BookService {
     public boolean takeBook(Long bookId) {
         if (bookRepo.existsById(bookId)) {
             Book bookForTake = bookRepo.findBookById(bookId);
-            bookForTake.setOwner(jwtService.getUserNameFromToken());
-            bookRepo.save(bookForTake);
-            return true;
+            if (bookForTake.getOwner() == null) {
+                bookForTake.setOwner(jwtService.getUserNameFromToken());
+                bookRepo.save(bookForTake);
+                return true;
+            } else {
+                return false;
+            }
         }
         return false;
     }
 
     @Override
-    public ResponseEntity<Book> returnBook(Book book) {
-        return null;
+    public boolean returnBook(Long bookId) {
+        if (bookRepo.existsById(bookId)) {
+            Book bookForTake = bookRepo.findBookById(bookId);
+            if ((bookForTake.getOwner() != null)
+                    && (bookForTake.getOwner().getId().equals(jwtService.getUserNameFromToken().getId()))) {
+                bookForTake.setOwner(null);
+                bookRepo.save(bookForTake);
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
+
 }
