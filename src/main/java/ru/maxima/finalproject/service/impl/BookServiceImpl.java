@@ -78,7 +78,7 @@ public class BookServiceImpl implements BookService {
     @Override
     // @Cascade()
     public boolean takeBook(Long bookId) {
-        if (bookRepo.existsById(bookId)) {
+         if (bookRepo.existsById(bookId)) {
             Book bookForTake = bookRepo.findBookById(bookId);
             if (bookForTake.getOwner() == null) {
                 bookForTake.setOwner(jwtService.getUserNameFromToken());
@@ -94,11 +94,11 @@ public class BookServiceImpl implements BookService {
     @Override
     public boolean returnBook(Long bookId) {
         if (bookRepo.existsById(bookId)) {
-            Book bookForTake = bookRepo.findBookById(bookId);
-            if ((bookForTake.getOwner() != null)
-                    && (bookForTake.getOwner().getId().equals(jwtService.getUserNameFromToken().getId()))) {
-                bookForTake.setOwner(null);
-                bookRepo.save(bookForTake);
+            Book bookForReturn = bookRepo.findBookById(bookId);
+            if ((bookForReturn.getOwner() != null)
+                    && (bookForReturn.getOwner().getId().equals(jwtService.getUserNameFromToken().getId()))) {
+                bookForReturn.setOwner(null);
+                bookRepo.save(bookForReturn);
                 return true;
             } else {
                 return false;

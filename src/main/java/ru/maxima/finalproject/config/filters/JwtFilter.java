@@ -31,10 +31,10 @@ public class JwtFilter extends OncePerRequestFilter {
                         .verify(token);
 
                 Person person = Person.builder()
+                        .id(decodedJWT.getClaim("id").asLong())
                         .email(decodedJWT.getClaim("Email").asString())
                         .role(decodedJWT.getClaim("Role").asString())
                         .name(decodedJWT.getClaim("Name").asString())
-                        .id(decodedJWT.getClaim("Id").asLong())
 
                         .build();
 
