@@ -26,7 +26,7 @@ public class AuthCtrl {
         return authService.authentication(person);
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<String> loginPerson(@RequestBody Person person) throws UserNotFoundExeption {
         try {
             UserDetails personDetails = personDetailsService.loadUserByUsername(person.getEmail());

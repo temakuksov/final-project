@@ -1,5 +1,6 @@
 package ru.maxima.finalproject.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,6 +30,7 @@ public class Book {
     private String removedPerson;
     @ManyToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
+    @JsonIgnore
     private Person owner;
 
 }
