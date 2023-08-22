@@ -1,6 +1,6 @@
 ### admin берет книгу
-POST localhost:8080/books/take/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4ifQ.uVY6lFP4hNVxncSDhsJZdbHyLxhhg2RQDh6HtT3va4s
+POST localhost:8080/books/take/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4iLCJJZCI6MX0.TOFqtizq6YUVb5Z6OiwR6GsOHN3Lzb-SlikkiUW443A
 Content-Type: application/json
 
 

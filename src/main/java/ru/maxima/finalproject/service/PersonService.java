@@ -19,7 +19,7 @@ public interface PersonService {
     boolean blockPerson (Person person);
 
     // получить имя персоны из базы
-    String getPersonNameFromDB(Long id);
+    Person getPersonFromDB(String email);
 
     // получить персону по id
     Optional<Person> getOnePerson(Long personId);

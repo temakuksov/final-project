@@ -80,8 +80,8 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public String getPersonNameFromDB(Long id) {
-        return personRepo.findPersonById(id).orElseThrow(UserNotFoundExeption::new).getName();
+    public Person getPersonFromDB(String email) {
+        return personRepo.findByEmail(email).orElseThrow(UserNotFoundExeption::new);
     }
 
     @Override

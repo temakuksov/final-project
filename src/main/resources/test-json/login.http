@@ -1,5 +1,4 @@
 ### admin логин
-
 POST localhost:8080/auth/login
 Content-Type: application/json
 
@@ -10,7 +9,6 @@ Content-Type: application/json
 
 
 ### bloked user login
-
 POST localhost:8080/auth/login
 Content-Type: application/json
 
@@ -20,7 +18,6 @@ Content-Type: application/json
 }
 
 ### user login
-
 GET localhost:8080/auth/login
 Content-Type: application/json
 

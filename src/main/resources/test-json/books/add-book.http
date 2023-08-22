@@ -1,7 +1,7 @@
 ### Админ добавляет книгу (дубль)
 
 POST localhost:8080/books/add
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4ifQ.uVY6lFP4hNVxncSDhsJZdbHyLxhhg2RQDh6HtT3va4s
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4iLCJpZCI6MX0.REK6plXcU7764jUqAB2-vA1QdV4-5kNq8-tEKGyyKRQ
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 
 ###  Админ добавляет книгу
 POST localhost:8080/books/add
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4ifQ.ha4bocaQHcMKinHVX4KcGMXsuQq_LfWZeBmWMmOXEs0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4iLCJpZCI6MX0.REK6plXcU7764jUqAB2-vA1QdV4-5kNq8-tEKGyyKRQ
 Content-Type: application/json
 
 {

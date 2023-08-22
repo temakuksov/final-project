@@ -15,10 +15,13 @@ import ru.maxima.finalproject.config.detail.PersonDetails;
 import ru.maxima.finalproject.model.Person;
 import ru.maxima.finalproject.service.impl.JwtServiceImpl;
 
+
 import java.io.IOException;
 
 @Component
 public class JwtFilter extends OncePerRequestFilter {
+
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -31,7 +34,7 @@ public class JwtFilter extends OncePerRequestFilter {
                         .verify(token);
 
                 Person person = Person.builder()
-                        .id(decodedJWT.getClaim("id").asLong())
+                        .id(decodedJWT.getClaim("Id").asLong())
                         .email(decodedJWT.getClaim("Email").asString())
                         .role(decodedJWT.getClaim("Role").asString())
                         .name(decodedJWT.getClaim("Name").asString())
