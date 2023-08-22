@@ -4,6 +4,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQ
 Content-Type: application/json
 
 ### user возвращает книгу
-POST localhost:8080/books/return/23
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InVzZXI1QG1haWwucnUiLCJSb2xlIjoidXNlciIsIk5hbWUiOiJ1c2VyNSIsIklkIjo1MH0._itNmFAn2HLtAgyLuOpHlIAqS2Z_G5HeFekKiEI4d1Y
+POST localhost:8080/books/return/13
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InRlc3R1c2VyMTBAbWFpbC5ydSIsIlJvbGUiOiJ1c2VyIiwiTmFtZSI6InRlc3R1c2VyMTAifQ.58yalhL5T36fgZv-FdtaVnXJ7n6Aq_BR0ftTOvWxqJc
 Content-Type: application/json
