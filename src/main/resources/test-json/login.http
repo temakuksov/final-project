@@ -18,10 +18,20 @@ Content-Type: application/json
 }
 
 ### user login
-GET localhost:8080/auth/login
+POST localhost:8080/auth/login
 Content-Type: application/json
 
 {
   "email": "testuser10@mail.ru",
   "password": "P@ssw0rd"
 }
+
+### user login
+POST localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "test-user@mail.ru",
+  "password": "P@ssw0rd1"
+}
+

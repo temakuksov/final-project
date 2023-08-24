@@ -23,7 +23,7 @@ public class PersonCtrl {
     @PreAuthorize("hasAnyAuthority(@authorities.ROLE_ADMIN)")
     @GetMapping()
     public List<Person> getAllPersons(@RequestBody JSONPObject rb) {
-        System.out.println("test blocked"+rb.getValue());
+        System.out.println("test blocked" + rb.getValue());
         return personService.getAllPersons(rb.getValue().equals(false));
     }
 
@@ -36,9 +36,9 @@ public class PersonCtrl {
 
     // заблокировать одну персону (пользователя)
     @PreAuthorize("hasAnyAuthority(@authorities.ROLE_ADMIN)")
-    @PostMapping("/block")
-    public ResponseEntity<String> blockPerson( Person person) {
-        boolean isPersonBlocked = personService.blockPerson(person);
+    @PostMapping("/remove")
+    public ResponseEntity<String> removePerson(@RequestBody Person person) {
+        boolean isPersonBlocked = personService.removePerson(person);
 
         if (isPersonBlocked) {
             return ResponseEntity.status(HttpStatus.OK).body("Person is blocked successfully");

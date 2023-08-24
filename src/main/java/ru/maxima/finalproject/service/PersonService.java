@@ -18,7 +18,7 @@ public interface PersonService {
     boolean editPerson (Person person);
 
     // заблокировать пользователя (removedAt)
-    boolean blockPerson (Person person);
+    boolean removePerson (Person person);
 
     // получить имя персоны из базы
     Person getPersonFromDB(String email);

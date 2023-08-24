@@ -1,0 +1,18 @@
+### Admin админ
+POST localhost:8080/persons/remove
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4iLCJpZCI6MX0.REK6plXcU7764jUqAB2-vA1QdV4-5kNq8-tEKGyyKRQ
+Content-Type: application/json
+
+{
+  "id": 13
+}
+
+
+### testuser10 - не админ
+POST localhost:8080/persons/remove
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InRlc3R1c2VyMTBAbWFpbC5ydSIsIlJvbGUiOiJ1c2VyIiwiTmFtZSI6InRlc3R1c2VyMTAiLCJJZCI6MjF9.rbYXzDaEJE9mnN9fjpcBmKh7fAJAw7EY0kZGf8qg-jA
+Content-Type: application/json
+
+{
+  "id": 13
+}

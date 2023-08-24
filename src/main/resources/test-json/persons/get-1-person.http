@@ -1,0 +1,9 @@
+### Admin - админ
+GET localhost:8080/persons/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4iLCJpZCI6MX0.REK6plXcU7764jUqAB2-vA1QdV4-5kNq8-tEKGyyKRQ
+Content-Type: application/json
+
+### testuser10 - не админ
+GET localhost:8080/persons/23
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InVzZXI1QG1haWwucnUiLCJSb2xlIjoidXNlciIsIk5hbWUiOiJ1c2VyNSIsIklkIjo1MH0._itNmFAn2HLtAgyLuOpHlIAqS2Z_G5HeFekKiEI4d1Y
+Content-Type: application/json

@@ -51,6 +51,11 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void removeBookById(Long bookId) {
+
+        //System.out.println("  ### Remove book!!! "+bookRepo.findById(bookId));
+
+        //if (bookRepo.findById(bookId).)
+
         String removedPersonName = jwtService.getUserNameFromToken().getName();
 
         Book bookForRemove = bookRepo.findBookById(bookId);

@@ -1,0 +1,30 @@
+### Admin админ
+POST localhost:8080/persons/edit
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4iLCJpZCI6MX0.REK6plXcU7764jUqAB2-vA1QdV4-5kNq8-tEKGyyKRQ
+Content-Type: application/json
+
+{
+  "id": 22,
+  "name": "test-user1",
+  "age": 28,
+  "email": "test-user@mail.ru",
+  "phoneNumber": "+7 933 3333333",
+  "password" : "P@ssw0rd1",
+  "role": "admin"
+}
+
+
+### редакт не админ
+POST localhost:8080/persons/edit
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InRlc3R1c2VyMTBAbWFpbC5ydSIsIlJvbGUiOiJ1c2VyIiwiTmFtZSI6InRlc3R1c2VyMTAiLCJJZCI6MjF9.rbYXzDaEJE9mnN9fjpcBmKh7fAJAw7EY0kZGf8qg-jA
+Content-Type: application/json
+
+{
+  "id": 23,
+  "name": "Федор",
+  "age": 33,
+  "email": "user1@mail.ru",
+  "phoneNumber": "+7 933 3323333",
+  "password" : "12345",
+  "role": "admin"
+}

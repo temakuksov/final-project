@@ -71,7 +71,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public boolean blockPerson(Person person) {
+    public boolean removePerson(Person person) {
         if (personRepo.existsById(person.getId())) {
             if (personRepo.getReferenceById(person.getId()).getRemovedAt() == null) {
                 personRepo.getReferenceById(person.getId()).setRemovedPerson(jwtService.getUserNameFromToken().getName());
