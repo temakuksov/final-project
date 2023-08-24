@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import ru.maxima.finalproject.config.detail.PersonDetailsService;
-import ru.maxima.finalproject.exeptions.UserNotFoundExeption;
+import ru.maxima.finalproject.exeptions.UserNotFoundException;
 import ru.maxima.finalproject.service.AuthService;
 import ru.maxima.finalproject.model.Person;
 
@@ -27,7 +27,7 @@ public class AuthCtrl {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> loginPerson(@RequestBody Person person) throws UserNotFoundExeption {
+    public ResponseEntity<String> loginPerson(@RequestBody Person person) throws UserNotFoundException {
         try {
             UserDetails personDetails = personDetailsService.loadUserByUsername(person.getEmail());
             if (!personDetails.isEnabled()) return ResponseEntity.status(HttpStatus.LOCKED).body("Person is blocked!");
@@ -35,7 +35,7 @@ public class AuthCtrl {
                 return ResponseEntity.status(HttpStatus.OK).body("Person logged successfully \nToken:\n" +  authService.authentication(person));
             }
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Person failed to login");
-        } catch (UserNotFoundExeption ue) {
+        } catch (UserNotFoundException ue) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ue.getMessage());
         }
     }

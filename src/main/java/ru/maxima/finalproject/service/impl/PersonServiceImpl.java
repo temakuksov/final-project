@@ -5,7 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.maxima.finalproject.config.Authorities;
-import ru.maxima.finalproject.exeptions.UserNotFoundExeption;
+import ru.maxima.finalproject.exeptions.UserNotFoundException;
 import ru.maxima.finalproject.model.Person;
 import ru.maxima.finalproject.repository.PersonRepo;
 import ru.maxima.finalproject.service.PersonService;
@@ -93,7 +93,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person getPersonFromDB(String email) {
-        return personRepo.findByEmail(email).orElseThrow(UserNotFoundExeption::new);
+        return personRepo.findByEmail(email).orElseThrow(UserNotFoundException::new);
     }
 
     @Override
@@ -101,6 +101,6 @@ public class PersonServiceImpl implements PersonService {
         Optional<Person> p = personRepo.findPersonById(personId);
         if (p.isPresent()) {
             return p;
-        } else throw new UserNotFoundExeption();
+        } else throw new UserNotFoundException();
     }
 }
