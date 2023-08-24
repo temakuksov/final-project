@@ -1,4 +1,4 @@
-### админ создает пользователя
+### Admin админ создает пользователя
 
 POST localhost:8080/persons/add
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4ifQ.uVY6lFP4hNVxncSDhsJZdbHyLxhhg2RQDh6HtT3va4s
@@ -10,3 +10,13 @@ Content-Type: application/json
   "email": "test-user@mail.ru"
 }
 
+### testuser10 не админ - нет доступа 403
+POST localhost:8080/persons/edit
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InRlc3R1c2VyMTBAbWFpbC5ydSIsIlJvbGUiOiJ1c2VyIiwiTmFtZSI6InRlc3R1c2VyMTAiLCJJZCI6MjF9.rbYXzDaEJE9mnN9fjpcBmKh7fAJAw7EY0kZGf8qg-jA
+Content-Type: application/json
+
+{
+  "name": "Petya",
+  "email": "user123@mail.ru",
+  "password" : "12345"
+}
