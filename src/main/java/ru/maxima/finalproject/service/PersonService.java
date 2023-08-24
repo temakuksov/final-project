@@ -6,11 +6,13 @@ import java.util.Optional;
 
 public interface PersonService {
 
+    List<Person> getAllPersons(boolean blocked);
+
     // добавить персону в базу (регистрация)
     boolean createPerson(Person person);
 
     // получить список всех персон
-    List<Person> getAllPersons();
+    // List<Person> getAllPersons();
 
     // редактировать персону
     boolean editPerson (Person person);

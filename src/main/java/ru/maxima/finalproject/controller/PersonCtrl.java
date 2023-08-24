@@ -1,5 +1,6 @@
 package ru.maxima.finalproject.controller;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +22,13 @@ public class PersonCtrl {
     // получить список всех персон (пользователей)
     @PreAuthorize("hasAnyAuthority(@authorities.ROLE_ADMIN)")
     @GetMapping()
-    public List<Person> getAllPersons() {
-        return personService.getAllPersons();
+    public List<Person> getAllPersons(@RequestBody JSONPObject rb) {
+        System.out.println("test blocked"+rb.getValue());
+        return personService.getAllPersons(rb.getValue().equals(false));
     }
 
     // получить одну персону (пользователя)
-    @GetMapping("{personId}")
+    @GetMapping("/{personId}")
     @PreAuthorize("hasAnyAuthority(@authorities.ROLE_ADMIN)")
     public Optional<Person> getOnePerson(@PathVariable Long personId) {
         return personService.getOnePerson(personId);
@@ -35,7 +37,7 @@ public class PersonCtrl {
     // заблокировать одну персону (пользователя)
     @PreAuthorize("hasAnyAuthority(@authorities.ROLE_ADMIN)")
     @PostMapping("/block")
-    public ResponseEntity<String> blockPerson(@RequestBody Person person) {
+    public ResponseEntity<String> blockPerson( Person person) {
         boolean isPersonBlocked = personService.blockPerson(person);
 
         if (isPersonBlocked) {
@@ -46,7 +48,7 @@ public class PersonCtrl {
     }
 
     @PreAuthorize("hasAnyAuthority(@authorities.ROLE_ADMIN)")
-    @PostMapping("add")
+    @PostMapping("/add")
     public ResponseEntity<String> addPerson(@RequestBody Person person) {
         boolean isPersonCreated = personService.createPerson(person);
 

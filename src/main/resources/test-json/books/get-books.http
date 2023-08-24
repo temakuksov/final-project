@@ -1,11 +1,11 @@
-#### admin получает список всех книг
+#### admin получает список всех книг (в том числе помеченных как удаленные)
 
 GET localhost:8080/books
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluQG1haWwucnUiLCJSb2xlIjoiYWRtaW4iLCJOYW1lIjoiQWRtaW4iLCJpZCI6MX0.REK6plXcU7764jUqAB2-vA1QdV4-5kNq8-tEKGyyKRQ
 Content-Type: application/json
 
 
-### user получает список всех книг
+### user получает список всех неудаленных книг
 
 GET localhost:8080/books
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InRlc3R1c2VyMTBAbWFpbC5ydSIsIlJvbGUiOiJ1c2VyIiwiTmFtZSI6InRlc3R1c2VyMTAifQ.58yalhL5T36fgZv-FdtaVnXJ7n6Aq_BR0ftTOvWxqJc

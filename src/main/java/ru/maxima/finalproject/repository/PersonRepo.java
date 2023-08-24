@@ -2,6 +2,8 @@ package ru.maxima.finalproject.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import ru.maxima.finalproject.model.Person;
+
+import java.util.List;
 import java.util.Optional;
 
 public interface PersonRepo extends JpaRepository<Person, Long> {
@@ -15,5 +17,7 @@ public interface PersonRepo extends JpaRepository<Person, Long> {
 
     boolean existsByEmail(String email);
 
+    List<Person> findPersonByRemovedAtIsNull();
 
+    List<Person> findPersonByRemovedAtIsNotNull();
 }

@@ -3,6 +3,7 @@ package ru.maxima.finalproject.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.maxima.finalproject.config.Authorities;
 import ru.maxima.finalproject.model.Book;
 import ru.maxima.finalproject.repository.BookRepo;
 import ru.maxima.finalproject.service.BookService;
@@ -21,7 +22,13 @@ public class BookServiceImpl implements BookService {
     // список книг - не отображать удаленные книги
     @Override
     public List<Book> getAllBooks() {
-        return bookRepo.findByRemovedAtIsNull();
+        // return bookRepo.findByRemovedAtIsNull();
+        if (jwtService.getUserNameFromToken().getRole().equals(Authorities.ROLE_ADMIN)) {
+            return bookRepo.findAll();
+        } else {
+            return bookRepo.findByRemovedAtIsNull();
+        }
+
     }
 
     @Override

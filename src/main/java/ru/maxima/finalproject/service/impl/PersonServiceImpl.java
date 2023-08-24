@@ -25,8 +25,12 @@ public class PersonServiceImpl implements PersonService {
 
 
     @Override
-    public List<Person> getAllPersons() {
-        return personRepo.findAll();
+    public List<Person> getAllPersons(boolean blocked) {
+        if (!blocked) {
+            return personRepo.findPersonByRemovedAtIsNull();
+        } else {
+            return personRepo.findPersonByRemovedAtIsNotNull();
+        }
     }
 
     @Override
