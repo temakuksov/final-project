@@ -24,13 +24,21 @@ public class PersonServiceImpl implements PersonService {
     private final PasswordEncoder passwordEncoder;
 
 
+
     @Override
-    public List<Person> getAllPersons(boolean blocked) {
-        if (!blocked) {
+    public List<Person> getAllPersons() {
+
+        return personRepo.findAll();
+        /* if (!blocked) {
             return personRepo.findPersonByRemovedAtIsNull();
         } else {
             return personRepo.findPersonByRemovedAtIsNotNull();
-        }
+        } */
+    }
+
+    @Override
+    public List<Person> getAllPersons(boolean blocked) {
+        return null;
     }
 
     @Override

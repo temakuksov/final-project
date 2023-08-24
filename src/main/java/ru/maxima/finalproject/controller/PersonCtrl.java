@@ -1,6 +1,5 @@
 package ru.maxima.finalproject.controller;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,9 +21,8 @@ public class PersonCtrl {
     // получить список всех персон (пользователей)
     @PreAuthorize("hasAnyAuthority(@authorities.ROLE_ADMIN)")
     @GetMapping()
-    public List<Person> getAllPersons(@RequestBody JSONPObject rb) {
-        System.out.println("test blocked" + rb.getValue());
-        return personService.getAllPersons(rb.getValue().equals(false));
+    public List<Person> getAllPersons() {
+        return personService.getAllPersons();
     }
 
     // получить одну персону (пользователя)
@@ -73,7 +71,9 @@ public class PersonCtrl {
         }
     }
 
+
     // добавление (регистрация) новой персоны (пользователя)
+
    /* @PreAuthorize("hasAnyAuthority(@authorities.ROLE_ADMIN)")
     @PostMapping("/reg/{adminId}")
     public void registration(@RequestBody Person user, @PathVariable Long adminId) {
