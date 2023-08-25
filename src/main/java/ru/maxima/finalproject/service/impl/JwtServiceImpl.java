@@ -5,7 +5,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import ru.maxima.finalproject.exeptions.UserNotFoundException;
+import ru.maxima.finalproject.exceptions.UserNotFoundException;
 import ru.maxima.finalproject.model.Person;
 import ru.maxima.finalproject.repository.PersonRepo;
 import ru.maxima.finalproject.service.JwtService;

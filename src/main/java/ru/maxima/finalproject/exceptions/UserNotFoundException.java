@@ -1,4 +1,4 @@
-package ru.maxima.finalproject.exeptions;
+package ru.maxima.finalproject.exceptions;
 
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException() {

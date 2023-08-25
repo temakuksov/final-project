@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.maxima.finalproject.exeptions.UserNotFoundException;
+import ru.maxima.finalproject.exceptions.UserNotFoundException;
 import ru.maxima.finalproject.model.Person;
 import ru.maxima.finalproject.repository.PersonRepo;
 

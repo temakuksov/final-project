@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import ru.maxima.finalproject.config.detail.PersonDetailsService;
-import ru.maxima.finalproject.exeptions.UserNotFoundException;
+import ru.maxima.finalproject.exceptions.UserNotFoundException;
 import ru.maxima.finalproject.service.AuthService;
 import ru.maxima.finalproject.model.Person;
 
